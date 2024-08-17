@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             .lineBreakMode(.byWordWrapping)
             .backgroundColor(.systemGray)
             .text("ZTChain is a lightweight library designed to facilitate chaining syntax in Swift, making your code more readable and expressive.")
-            .subject
+            .build()
         
         self.view.addSubview(tipsLbl);
         
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             .name("Jane Doe")
             .age(28)
             .email("jane.doe@example.com")
-            .subject
+            .build()
 
         print("Name: \(person.name), Age: \(person.age), Email: \(person.email)")
 
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
             .brand("Honda")
             .model("Civic")
             .year(2021)
-            .subject
+            .build()
 
         print("Brand: \(car.brand), Model: \(car.model), Year: \(car.year)")
     }

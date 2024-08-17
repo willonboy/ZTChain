@@ -39,6 +39,10 @@ public struct ZTWrapper<Subject> {
             return self
         }
     }
+    
+    public func build() -> Subject {
+        return subject
+    }
 }
 
 public protocol ZTWrapperCompatible {
