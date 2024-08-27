@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .zt
             .frame(UIScreen.main.bounds)
             .backgroundColor(.white)
-            .rootViewController(ViewController())
+            .rootViewController(UINavigationController(rootViewController: ViewController()))
             .build()
         self.window?.makeKeyAndVisible()
         

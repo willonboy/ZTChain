@@ -49,6 +49,8 @@ class ViewController: UIViewController {
         
         self.view.addSubview(tipsLbl);
         
+        self.zt.title("test").build()
+        
         test()
     }
     

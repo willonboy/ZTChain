@@ -40,6 +40,7 @@ public struct ZTWrapper<Subject> {
         }
     }
     
+    @discardableResult
     public func build() -> Subject {
         return subject
     }
