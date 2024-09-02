@@ -41,6 +41,12 @@ public struct ZTWrapper<Subject> {
     }
     
     @discardableResult
+    public func callAsFunction(_ function: (Subject) -> Void) -> ZTWrapper<Subject> {
+        function(subject)
+        return self
+    }
+    
+    @discardableResult
     public func build() -> Subject {
         return subject
     }
