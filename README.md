@@ -54,7 +54,7 @@ To integrate using Apple's Swift Package Manager, add the following as a depende
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/willonboy/ZTChain.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/willonboy/ZTChain.git", .upToNextMajor(from: "1.0.3"))
 ]
 ```
 
@@ -84,7 +84,22 @@ let tipsLbl = UILabel().zt
     .lineBreakMode(.byWordWrapping)
     .backgroundColor(.systemGray)
     .text("ZTChain is a lightweight library designed to facilitate chaining syntax in Swift, making your code more readable and expressive.")
-    .subject
+    .build()
+    
+    
+// call function             
+self.window = UIWindow()
+    .zt
+//   {
+//       $0.makeKeyAndVisible()
+//   }
+    .frame(UIScreen.main.bounds) 
+    .backgroundColor(.white)
+    .rootViewController(UINavigationController(rootViewController: ViewController()))
+    .call {
+        $0.makeKeyAndVisible()
+    }
+    .build()
 ```
 
 ## License 
