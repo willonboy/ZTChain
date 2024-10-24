@@ -32,7 +32,7 @@ class Car: NSObject {
 }
 
 class ViewController: UIViewController {
-    var tipsLbl = UILabel()
+    var tipsLbl: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             .text("ZTChain is a lightweight library designed to facilitate chaining syntax in Swift, making your code more readable and expressive.")
             .build()
         
-        self.view.addSubview(tipsLbl);
+        self.view.addSubview(tipsLbl!);
         
         self.zt.title("test").build()
         

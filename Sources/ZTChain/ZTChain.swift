@@ -59,7 +59,8 @@ public struct ZTWrapper<Subject> {
 }
 
 extension ZTWrapper {
-    public func ref(_ s: inout Subject) -> Self {
+    @discardableResult
+    public func ref(_ s: inout Subject?) -> Self {
         s = self.subject
         return self
     }
