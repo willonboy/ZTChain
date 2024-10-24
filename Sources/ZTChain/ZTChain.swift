@@ -58,6 +58,13 @@ public struct ZTWrapper<Subject> {
     }
 }
 
+extension ZTWrapper {
+    public func ref(_ s: inout Subject) -> Self {
+        s = self.subject
+        return self
+    }
+}
+
 public protocol ZTWrapperCompatible {
     associatedtype T
 

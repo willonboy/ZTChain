@@ -32,11 +32,23 @@ class Car: NSObject {
 }
 
 class ViewController: UIViewController {
-
+    var tipsLbl = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let tipsLbl = UILabel().zt
+//        let tipsLbl = UILabel().zt
+//            .frame(CGRect(x: 20, y: 200, width: 350, height: 100))
+//            .textAlignment(.center)
+//            .font(.boldSystemFont(ofSize: 18))
+//            .textColor(.systemPink)
+//            .numberOfLines(10)
+//            .lineBreakMode(.byWordWrapping)
+//            .backgroundColor(.systemGray)
+//            .text("ZTChain is a lightweight library designed to facilitate chaining syntax in Swift, making your code more readable and expressive.")
+//            .build()
+        
+        UILabel().zt.ref(&tipsLbl)
             .frame(CGRect(x: 20, y: 200, width: 350, height: 100))
             .textAlignment(.center)
             .font(.boldSystemFont(ofSize: 18))
