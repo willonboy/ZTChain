@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                         DESC
 
   s.homepage         = 'https://github.com/willonboy/ZTChain'
-  s.license          = { :type => 'MPL-2.0', :file => 'LICENSE' }
+  s.license          = { :type => 'AGPLv3', :file => 'LICENSE' }
   s.author           = { 'trojan zhang' => 'willonboy@qq.com' }
   s.source           = { :git => 'https://github.com/willonboy/ZTChain.git', :tag => s.version.to_s }
 

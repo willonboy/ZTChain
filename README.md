@@ -104,4 +104,4 @@ self.window = UIWindow()
 
 ## License 
 
-This project is licensed under the MPL-2.0.
+This project is licensed under the AGPLv3.
