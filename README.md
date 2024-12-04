@@ -1,6 +1,8 @@
 # ZTChain
 ZTChain is a lightweight library designed to facilitate chaining syntax in Swift, making your code more readable and expressive.
 
+This is currently the only solution that supports chained assignments for all Objective-C object properties.
+
 ## Features 
 
 ### 1. **Chainable Syntax**
