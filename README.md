@@ -56,16 +56,8 @@ To integrate using Apple's Swift Package Manager, add the following as a depende
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/willonboy/ZTChain.git", .upToNextMajor(from: "1.0.3"))
+    .package(url: "https://github.com/willonboy/ZTChain.git", .upToNextMajor(from: "2.0.0"))
 ]
-```
-
-### CocoaPods
-
-To integrate using CocoaPods, add the following to your Podfile:
-
-```ruby
-pod 'ZTChain', '~> 1.0.0'
 ```
 
 ## Usage
@@ -92,9 +84,6 @@ let tipsLbl = UILabel().zt
 // call function             
 self.window = UIWindow()
     .zt
-//   {
-//       $0.makeKeyAndVisible()
-//   }
     .frame(UIScreen.main.bounds) 
     .backgroundColor(.white)
     .rootViewController(UINavigationController(rootViewController: ViewController()))

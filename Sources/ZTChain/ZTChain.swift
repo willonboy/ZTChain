@@ -50,12 +50,6 @@ public struct ZTWrapper<Subject> {
     }
     
     @discardableResult
-    public func callAsFunction(_ function: (Subject) -> Void) -> ZTWrapper<Subject> {
-        function(subject)
-        return self
-    }
-    
-    @discardableResult
     public func call(_ function: (Subject) -> Void) -> ZTWrapper<Subject> {
         function(subject)
         return self
@@ -67,7 +61,7 @@ public struct ZTWrapper<Subject> {
     }
 }
 
-extension ZTWrapper {
+extension ZTWrapper where Subject: AnyObject {
     @discardableResult
     public func ref(_ s: inout Subject?) -> Self {
         s = self.subject
@@ -77,17 +71,10 @@ extension ZTWrapper {
 
 public protocol ZTWrapperCompatible {
     associatedtype T
-
-    static var zt: ZTWrapper<T>.Type { get }
-
     var zt: ZTWrapper<T> { get }
 }
 
 extension ZTWrapperCompatible {
-    public static var zt: ZTWrapper<Self>.Type {
-        get { ZTWrapper<Self>.self }
-    }
-
     public var zt: ZTWrapper<Self> {
         get { ZTWrapper(self) }
     }

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ZTChain'
-  s.version          = '1.0.2'
+  s.version          = '2.0.0'
   s.summary          = 'A simple library for chaining syntax in Swift.'
 
   s.description      = <<-DESC

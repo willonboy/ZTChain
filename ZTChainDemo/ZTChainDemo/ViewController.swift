@@ -19,7 +19,7 @@ struct Person: ZTWrapperCompatible {
     }
 }
 
-class Car: NSObject {
+class Car: ZTWrapperCompatible {
     var brand: String
     var model: String
     var year: Int

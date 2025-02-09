@@ -14,23 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow()
             .zt
-            .frame(UIScreen.main.bounds) 
-//            ({
-//                $0.makeKeyAndVisible()
-//            })
+            .frame(UIScreen.main.bounds)
             .backgroundColor(.white)
             .rootViewController(UINavigationController(rootViewController: ViewController()))
             .call {
                 $0.makeKeyAndVisible()
             }
-//            .callAsFunction({
-//                $0.makeKeyAndVisible()
-//            })
-        
-//            .subject
-//            .zt {
-//                $0.makeKeyAndVisible()
-//            }
             .build()
         
         return true
