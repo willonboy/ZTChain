@@ -24,13 +24,13 @@ import Foundation
 
 @dynamicMemberLookup
 public struct ZTWrapper<Subject> {
-    public let subject: Subject
+    @usableFromInline let subject: Subject
 
     public init(_ subject: Subject) {
         self.subject = subject
     }
 
-    public subscript<Value>(
+    @inlinable public subscript<Value>(
         dynamicMember keyPath: WritableKeyPath<Subject, Value>
     ) -> ((Value) -> ZTWrapper<Subject>) {
         var subject = self.subject
@@ -40,7 +40,7 @@ public struct ZTWrapper<Subject> {
         }
     }
     
-    public subscript<Value>(
+    @inlinable public subscript<Value>(
         dynamicMember keyPath: ReferenceWritableKeyPath<Subject, Value>
     ) -> ((Value) -> ZTWrapper<Subject>) {
         return { value in
@@ -50,13 +50,13 @@ public struct ZTWrapper<Subject> {
     }
     
     @discardableResult
-    public func call(_ function: (Subject) -> Void) -> ZTWrapper<Subject> {
+    @inlinable public func call(_ function: (Subject) -> Void) -> ZTWrapper<Subject> {
         function(subject)
         return self
     }
     
     @discardableResult
-    public func build() -> Subject {
+    @inlinable public func build() -> Subject {
         return subject
     }
 }
@@ -69,17 +69,17 @@ extension ZTWrapper where Subject: AnyObject {
     }
 }
 
-public protocol ZTWrapperCompatible {
+public protocol ZTChain {
     associatedtype T
     var zt: ZTWrapper<T> { get }
 }
 
-extension ZTWrapperCompatible {
+extension ZTChain {
     public var zt: ZTWrapper<Self> {
         get { ZTWrapper(self) }
     }
 }
 
 /// Extend NSObject with `zt` proxy.
-extension NSObject: ZTWrapperCompatible { }
+extension NSObject: ZTChain { }
 

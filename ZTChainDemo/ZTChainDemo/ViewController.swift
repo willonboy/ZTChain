@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Person: ZTWrapperCompatible {
+struct Person: ZTChain {
     var name: String
     var age: Int
     var email: String
@@ -19,7 +19,7 @@ struct Person: ZTWrapperCompatible {
     }
 }
 
-class Car: ZTWrapperCompatible {
+class Car: ZTChain {
     var brand: String
     var model: String
     var year: Int
