@@ -24,7 +24,7 @@ import Foundation
 
 @dynamicMemberLookup
 public struct ZTWrapper<Subject> {
-    @usableFromInline let subject: Subject
+    public let subject: Subject
 
     public init(_ subject: Subject) {
         self.subject = subject
